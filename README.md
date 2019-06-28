@@ -1,5 +1,16 @@
 ### simple clojurescript project using reagent, tests runners with clj command line wrapper
 
+A very basic template to have tests running in Clojurescript without
+leiningen tooling. Just clojure command line wrapper.
+
+This project uses following tools and deps:
+
+* Figwheel-main
+* cljs-test-display
+* reagent
+* core.async
+* cljs-http and cljs-ajax
+
 
 Run your dev env:
 
