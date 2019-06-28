@@ -3,6 +3,8 @@
 
 (enable-console-print!) ;; enable print log into console
 
+(def debug?
+  ^boolean goog.DEBUG)
 
 (defn app []
   [:h1.site__title

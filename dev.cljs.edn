@@ -2,4 +2,5 @@
   :css-dirs   ["resources/public/css"]
   :extra-main-files {:tests {:main testing.test-runner}}}
 {:main hello-app.core
- :closure-defines {cljs-test-display.core/root-node-id "app-tests"}}
+ :closure-defines {cljs-test-display.core/root-node-id "app-tests"
+                   goog.DEBUG true}}
