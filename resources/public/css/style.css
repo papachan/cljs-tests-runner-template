@@ -3,11 +3,16 @@
   --color-pink: rgba(241, 50, 50, 1);
 }
 
+body {
+  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
 #app {
   margin: 0;
   height: 100vh;
   display: flex;
-  font-family: Arial;
   align-items: center;
   justify-content: center;
 }

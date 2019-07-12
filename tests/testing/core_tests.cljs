@@ -12,3 +12,13 @@
     (async done
            (is (= 42 x))
            (done))))
+
+(deftest test-async-file
+  (async done
+         (go (let [response (<! (http/get "index.html"))]
+               (is (= 200 (:status response)))
+               (done)))))
+
+(deftest slow-test
+  (async done
+    (js/setTimeout (fn [] (is true) (done)) 1000)))
