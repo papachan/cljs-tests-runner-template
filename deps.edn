@@ -14,6 +14,12 @@
                      com.bhauman/cljs-test-display   {:mvn/version "0.1.1"}}
         :main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}
 
+  :test
+  {:extra-paths ["tests" "target"]
+   :main-opts ["--main" "cljs.main"
+               "-i" "tests/testing/core_tests.cljs"
+               "-e" "(cljs.test/run-tests,'testing.core-tests)"]}
+
   :test-headless
   {:extra-paths ["tests" "target" "resources"]
    :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}}
