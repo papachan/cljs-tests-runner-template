@@ -4,6 +4,9 @@
             [cljs-http.client :as http]
             [ajax.core :refer [GET]]))
 
+(deftest slow-test
+  (async done
+         (js/setTimeout (fn [] (is true) (done)) 1000)))
 
 (deftest test-async-file
   (async done

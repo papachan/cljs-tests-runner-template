@@ -1,21 +1,22 @@
-{:paths
- ["src" "tests" "resources" "target"]
-
- :deps
- {org.clojure/clojurescript {:mvn/version "1.10.520"}
-  com.bhauman/figwheel-main {:mvn/version "0.2.3"}
-  com.bhauman/rebel-readline-cljs #:mvn{:version "0.1.4"}
-  com.bhauman/cljs-test-display {:mvn/version "0.1.1"}
-  reagent {:mvn/version "0.8.1"}
-  org.clojure/core.async {:mvn/version "0.4.500"}
-  cljs-http {:mvn/version "0.1.46"}
-  cljs-ajax {:mvn/version "0.8.0"}
-  }
+{:deps {org.clojure/clojurescript {:mvn/version "1.10.520"}
+        org.clojure/tools.reader  {:mvn/version "1.3.2"}
+        reagent                   {:mvn/version "0.8.1"}
+        org.clojure/core.async    {:mvn/version "0.4.500"}
+        cljs-http                 {:mvn/version "0.1.46"}
+        cljs-ajax                 {:mvn/version "0.8.0"}}
+ :paths
+ ["src"]
 
  :aliases
- {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}
+ {:dev {:extra-paths ["resources" "tests" "target"]
+        :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}
+                     com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+                     com.bhauman/cljs-test-display   {:mvn/version "0.1.1"}}
+        :main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}
+
   :test-headless
-  {:main-opts ["--main" "figwheel.main"
+  {:extra-paths ["tests" "target" "resources"]
+   :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}}
+   :main-opts ["--main" "figwheel.main"
                "--compile-opts" "test.headless.cljs.edn"
-               "--main" "testing.test-runner-headless"]
-   }}}
+               "--main" "testing.test-runner-headless"]}}}

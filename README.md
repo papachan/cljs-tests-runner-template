@@ -3,7 +3,9 @@
 A very basic template to have tests running in Clojurescript without
 leiningen tooling. Just clojure command line wrapper.
 
-This project uses following tools and deps:
+This project requires [Deps and CLI](https://clojure.org/guides/getting_started) tooling installed.
+
+Used dependencies:
 
 * Figwheel-main
 * cljs-test-display
@@ -11,7 +13,6 @@ This project uses following tools and deps:
 * core.async
 * cljs-http
 * cljs-ajax
-
 
 
 ### Browser testing
@@ -33,7 +34,6 @@ Run clojurescript tests separately:
 
 ```bash
     $ clj -m cljs.main -i tests/testing/core_tests.cljs -e "(cljs.test/run-tests 'testing.core-tests)"
-
 ```
 
 
