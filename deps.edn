@@ -13,4 +13,9 @@
   }
 
  :aliases
- {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}}}
+ {:dev {:main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}
+  :test-headless
+  {:main-opts ["--main" "figwheel.main"
+               "--compile-opts" "test.headless.cljs.edn"
+               "--main" "testing.test-runner-headless"]
+   }}}

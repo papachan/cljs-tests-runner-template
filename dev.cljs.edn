@@ -1,5 +1,5 @@
 ^{:watch-dirs ["src" "tests"]
-  :css-dirs   ["resources/public/css"]
+  :css-dirs   ["resources"]
   :extra-main-files {:tests {:main testing.test-runner}}}
 {:main hello-app.core
  :closure-defines {cljs-test-display.core/root-node-id "app-tests"

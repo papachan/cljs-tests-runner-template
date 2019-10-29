@@ -9,25 +9,56 @@ This project uses following tools and deps:
 * cljs-test-display
 * reagent
 * core.async
-* cljs-http and cljs-ajax
+* cljs-http
+* cljs-ajax
 
+
+
+### Browser testing
 
 Run your dev env:
 
+```bash
+    $ clj -A:dev
 ```
-clj -A:dev
-```
 
-Just open:
+- Just open this url:
 
 
-`http://localhost:9500/tests.html`
-
+http://localhost:9500/tests.html
 
 
 Run clojurescript tests separately:
 
-```
-clj -m cljs.main -i tests/testing/core_tests.cljs -e "(cljs.test/run-tests 'testing.core-tests)"
 
+```bash
+    $ clj -m cljs.main -i tests/testing/core_tests.cljs -e "(cljs.test/run-tests 'testing.core-tests)"
+
+```
+
+
+### Headless Browser Testing
+
+
+- install node modules:
+
+  ```bash
+  $ yarn -i
+  ```
+
+Now run:
+
+  ```bash
+  $ clj -A:test-headless
+  ```
+
+Ouput:
+
+
+```
+Testing testing.core-test
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+:figwheel.main.testing/success
 ```

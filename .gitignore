@@ -4,3 +4,5 @@ target/
 figwheel_server.log
 .repl
 .nrepl-port
+node_modules/
+yarn.lock

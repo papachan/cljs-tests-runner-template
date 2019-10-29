@@ -1,0 +1,2 @@
+^{:launch-js testing/run-js-test-environment}
+{:main testing.test-runner-headless}
