@@ -2,7 +2,8 @@
   (:require  [cljs.test]
              [cljs-test-display.core]
              [testing.core-tests]
-             [testing.async-tests])
+             [testing.async-tests]
+             [figwheel.main.testing :refer [run-tests-async]])
   (:require-macros [cljs.test]))
 
 (defn ^:after-load test-run
@@ -13,3 +14,6 @@
    'testing.async-tests))
 
 (defonce run (test-run))
+
+(defn -main [& args]
+  (run-tests-async 5000))
