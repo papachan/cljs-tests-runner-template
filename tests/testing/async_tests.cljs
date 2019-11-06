@@ -8,6 +8,14 @@
   (async done
          (js/setTimeout (fn [] (is true) (done)) 1000)))
 
+(deftest test-js-resolve
+  (async done
+         (.finally
+          (.then (js/Promise.resolve 42)
+                 #(is (= %1 42))
+                 #(is false "Should not reject"))
+          (done))))
+
 (deftest test-async-file
   (async done
          (go (let [response (<! (http/get "index.html"))]
