@@ -20,7 +20,7 @@ Used dependencies:
 Run your dev env:
 
 ```bash
-    $ clj -A:dev
+    $ clj -A:fig:dev
 ```
 
 - Just open this url:
@@ -49,7 +49,7 @@ Run clojurescript tests separately:
 Now run:
 
   ```bash
-  $ clj -A:test-headless
+  $ clj -A:fig:test-headless
   ```
 
 Ouput:
