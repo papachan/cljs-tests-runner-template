@@ -8,24 +8,25 @@
  ["src"]
 
  :aliases
- {:dev {:extra-paths ["resources" "tests" "target"]
-        :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}
-                     com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
-                     com.bhauman/cljs-test-display   {:mvn/version "0.1.1"}}
-        :main-opts ["-m"  "figwheel.main" "--build" "dev" "--repl"]}
-
-  :test
-  {:extra-paths ["tests" "target" "resources"]
+ {:fig
+  {
+   :extra-paths ["resources" "tests" "target"]
    :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}
                 com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
-                com.bhauman/cljs-test-display   {:mvn/version "0.1.1"}}
-   :main-opts ["--main" "figwheel.main"
-               "-co" "test.cljs.edn"
+                com.bhauman/cljs-test-display   {:mvn/version "0.1.1"}}}
+
+  :dev
+  {
+   :main-opts ["--main"  "figwheel.main"
+               "--build" "dev"
+               "--repl"]}
+
+  :test-once
+  {:main-opts ["--main" "figwheel.main"
+               "-co"    "test.cljs.edn"
                "--main" "testing.test-runner"]}
 
   :test-headless
-  {:extra-paths ["tests" "target" "resources"]
-   :extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.2.3"}}
-   :main-opts ["--main" "figwheel.main"
+  {:main-opts ["--main"         "figwheel.main"
                "--compile-opts" "test.headless.cljs.edn"
-               "--main" "testing.test-runner-headless"]}}}
+               "--main"         "testing.test-runner-headless"]}}}
